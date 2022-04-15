@@ -1,0 +1,20 @@
+// File for global settings
+
+// 1. Space
+$base-scale: 8;
+
+// 2. Grid
+$grid-columns: 12;
+$grid-column-gap: $base-scale * 2px;
+$grid-margin: 20px;
+
+// 3. Typography
+
+// 3.1 Basic system font stack
+$sans-serif: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+$monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace;
+
