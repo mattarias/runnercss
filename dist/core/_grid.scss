@@ -1,0 +1,136 @@
+@use "../setup";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(setup.$grid-columns, minmax(0, 1fr));
+  grid-column-gap: setup.$grid-column-gap;
+  margin: auto;
+  padding: 0 setup.$grid-margin;
+  width: 100%;
+  &.no-grid-margin {
+    padding: 0;
+  }
+  .content {
+    @for $i from 1 through setup.$grid-columns {
+      &.size-#{$i} {
+        grid-column: span #{$i};
+      }
+    }
+  }
+  & .debug,
+  * {
+    outline: 1px solid red;
+  }
+}
+
+// Container media queries
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1524px) {
+  .container {
+    max-width: 1524px;
+  }
+}
+
+// Grid media queries
+
+@media (max-width: 1524px) {
+  .container {
+    .content {
+      @for $i from 1 through setup.$grid-columns {
+        &.size-xxxl-#{$i} {
+          grid-column: span #{$i};
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .container {
+    .content {
+      @for $i from 1 through setup.$grid-columns {
+        &.size-xxl-#{$i} {
+          grid-column: span #{$i};
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    .content {
+      @for $i from 1 through setup.$grid-columns {
+        &.size-xl-#{$i} {
+          grid-column: span #{$i};
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    .content {
+      @for $i from 1 through setup.$grid-columns {
+        &.size-l-#{$i} {
+          grid-column: span #{$i};
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    .content {
+      @for $i from 1 through setup.$grid-columns {
+        &.size-m-#{$i} {
+          grid-column: span #{$i};
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    .content {
+      @for $i from 1 through setup.$grid-columns {
+        &.size-s-#{$i} {
+          grid-column: span #{$i};
+        }
+      }
+    }
+  }
+}
