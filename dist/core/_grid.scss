@@ -11,12 +11,20 @@
     padding: 0;
   }
   .content {
+    margin: setup.$base-scale * 1px;
     @for $i from 1 through setup.$grid-columns {
       &.size-#{$i} {
         grid-column: span #{$i};
       }
     }
   }
+  
+}
+
+.debug{
+    * {
+        outline: 1px solid red;
+    }
 }
 
 // Container media queries
